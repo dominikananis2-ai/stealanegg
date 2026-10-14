@@ -1,22 +1,22 @@
--- YOKUDO HUB V2 by dominikananis2-ai
--- NO KEY
-pcall(function()
- game.StarterGui:SetCore("SendNotification",{Title="YOKUDO HUB",Text="Loading YOKUDO...",Duration=4})
-end)
-
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local Window = Fluent:CreateWindow({
- Title = "YOKUDO HUB",
- SubTitle = "Steal an Egg - dominikananis2-ai",
+    Title = "YOKUDO HUB V2",
+    SubTitle = "by dominikananis2-ai - NO KEY",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = true,
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.LeftControl
 })
-
-local Tab = Window:AddTab({Title="Main", Icon=""})
-Tab:AddButton({
- Title="Test Hub",
- Description="Cek apakah hub jalan",
- Callback=function()
-  print("YOKUDO HUB OK")
- end
+local Tabs = {
+    Main = Window:AddTab({ Title = "Main", Icon = "home" }),
+}
+Tabs.Main:AddButton({
+    Title = "TEST HUB JALAN",
+    Description = "Pencet ini",
+    Callback = function()
+        Fluent:Notify({ Title = "YOKUDO", Content = "BERHASIL BRO!", Duration = 5 })
+    end
 })
-
-Fluent:Notify({Title="YOKUDO HUB",Content="Loaded! Enjoy",Duration=5})
+Window:SelectTab(1)
+Fluent:Notify({ Title = "YOKUDO HUB", Content = "YOKUDO Loaded!", Duration = 5 })
